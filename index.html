@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Carrinho Inteligente</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre o Projeto</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#especificacoes">Especificações Técnicas</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="carrossel">
+        <div class="carrossel-container">
+            <div class="slide active">
+                <img src="images/img1.jpg" alt="Carrinho Inteligente">
+                <div class="slide-text">
+                    <h1>Revolucione sua Logística</h1>
+                    <p>Conheça o projeto que transforma armazéns.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/img2.jpeg" alt="Braço Robótico">
+                <div class="slide-text">
+                    <h1>Precisão e Eficiência</h1>
+                    <p>Braço robótico para coleta e organização de itens.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/img3.jpg" alt="Tecnologia Avançada">
+                <div class="slide-text">
+                    <h1>Inteligência Integrada</h1>
+                    <p>Sensores, IA e autonomia para operações inteligentes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carrossel-controls">
+            <div class="carrossel-prev" onclick="mudarSlide(-1)"><i class="fas fa-chevron-left"></i></div>
+            <div class="carrossel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+            <div class="carrossel-next" onclick="mudarSlide(1)"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <div class="sobre-container">
+            <div class="sobre-text">
+                <h2>Sobre o Projeto</h2>
+                <p>
+                    Um carrinho autônomo de grande porte projetado para operar em armazéns industriais, otimizando a movimentação e transporte de cargas pesadas e volumosas. O veículo é robusto, altamente eficiente e escalável, equipado com um sistema de navegação inteligente baseado em sensores LIDAR, câmeras de profundidade e inteligência artificial para evitar obstáculos e otimizar rotas.
+                </p>
+                <p>
+                    O carrinho substitui a tradicional esteira transportadora por um elevador integrado, localizado abaixo de um braço mecânico, permitindo a coleta e movimentação de caixas em diferentes alturas. Ele pode levantar, transportar e posicionar cargas de forma precisa, facilitando o armazenamento e a distribuição em ambientes logísticos de alta demanda.
+                </p>
+            </div>
+            <div id="modelo-3d">
+                <!-- Modelos 3D -->
+                <model-viewer id="modelo-tudo" src="images/carrinho.glb" ar camera-controls auto-rotate></model-viewer>
+                <model-viewer id="modelo-braco" src="images/braco.glb" ar camera-controls auto-rotate style="display: none;"></model-viewer>
+                <model-viewer id="modelo-chassi" src="images/chassi.glb" ar camera-controls auto-rotate style="display: none;"></model-viewer>
+                <model-viewer id="modelo-rodas" src="images/rodas.glb" ar camera-controls auto-rotate style="display: none;"></model-viewer>
+                <model-viewer id="modelo-bau" src="images/bau.glb" ar camera-controls auto-rotate style="display: none;"></model-viewer>
+                <model-viewer id="modelo-elevador" src="images/elevador.glb" ar camera-controls auto-rotate style="display: none;"></model-viewer>
+
+                <!-- Controles -->
+                <div id="controles">
+                    <button onclick="mostrarModelo('modelo-tudo')">Carrinho Inteiro</button>
+                    <button onclick="mostrarModelo('modelo-braco')">Braço Robótico</button>
+                    <button onclick="mostrarModelo('modelo-chassi')">Chassi</button>
+                    <button onclick="mostrarModelo('modelo-rodas')">Rodas</button>
+                    <button onclick="mostrarModelo('modelo-bau')">Baú</button>
+                    <button onclick="mostrarModelo('modelo-elevador')">Elevador</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="funcionalidades" class="funcionalidades">
+        <div class="funcionalidades-container">
+            <h2>Funcionalidades</h2>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade">
+                    <i class="fas fa-route"></i>
+                    <h3>Navegação Autônoma</h3>
+                    <p>Deslocamento otimizado em armazéns, evitando obstáculos e gargalos.</p>
+                </div>
+                <div class="funcionalidade">
+                    <i class="fas fa-barcode"></i>
+                    <h3>Leitura Inteligente</h3>
+                    <p>Identificação e registro de produtos com agilidade e precisão.</p>
+                </div>
+                <div class="funcionalidade">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Análise de Dados</h3>
+                    <p>Monitoramento do desempenho e geração de relatórios para otimizar processos.</p>
+                </div>
+                <div class="funcionalidade">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <h3>Coleta e Entrega</h3>
+                    <p>O braço robótico coleta os itens nas prateleiras e os deposita no baú do carrinho, agilizando o processo de picking.</p>
+                </div>
+                <div class="funcionalidade">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3>Carga e Descarga</h3>
+                    <p>O elevador permite que o carrinho carregue e descarregue itens em diferentes alturas, otimizando o espaço do armazém.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especificacoes" class="especificacoes">
+        <div class="especificacoes-container">
+            <h2>Especificações Técnicas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Especificação</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Estrutura</td>
+                    <td>Alumínio extrudado ou aço carbono</td>
+                </tr>
+                <tr>
+                    <td>Chassi Reforçado</td>
+                    <td>Aço ou alumínio (2m x 1,5m aprox.)</td>
+                </tr>
+                <tr>
+                    <td>Rodas Industriais</td>
+                    <td>Poliuretano, 15 cm de diâmetro</td>
+                </tr>
+                <tr>
+                    <td>Motores de Tração</td>
+                    <td>Motores DC de 250W, 24V</td>
+                </tr>
+                <tr>
+                    <td>Braço Mecânico</td>
+                    <td>6 DOF (graus de liberdade), estrutura metálica</td>
+                </tr>
+                <tr>
+                    <td>Elevador</td>
+                    <td>Sistema de elevação hidráulico (até 1,5m)</td>
+                </tr>
+                <tr>
+                    <td>Placa Controladora</td>
+                    <td>NVIDIA Jetson Nano ou Raspberry Pi 4</td>
+                </tr>
+                <tr>
+                    <td>Driver de Motor</td>
+                    <td>Driver de motor para 4 motores de tração (24V, 30A)</td>
+                </tr>
+                <tr>
+                    <td>Sensores de Navegação</td>
+                    <td>LiDAR, ultrassônicos e câmera de profundidade</td>
+                </tr>
+                <tr>
+                    <td>Bateria</td>
+                    <td>LiFePO4, 24V 100Ah</td>
+                </tr>
+                <tr>
+                    <td>Sistema de Comunicação</td>
+                    <td>Módulos Wi-Fi, Bluetooth e LoRa</td>
+                </tr>
+                <tr>
+                    <td>Sistema de Segurança</td>
+                    <td>Sensores infravermelhos e freios de emergência</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    <section id="equipe" class="equipe">
+        <div class="equipe-container">
+            <h2>Equipe</h2>
+            <div class="equipe-grid">
+                <div class="membro">
+                    <img src="images/membro1.jpg" alt="Membro 1">
+                    <h3>Nome do Membro 1</h3>
+                    <p>Cargo</p>
+                </div>
+                <div class="membro">
+                    <img src="images/membro2.jpg" alt="Membro 2">
+                    <h3>Nome do Membro 2</h3>
+                    <p>Cargo</p>
+                </div>
+                <div class="membro">
+                    <img src="images/membro3.jpg" alt="Membro 3">
+                    <h3>Nome do Membro 3</h3>
+                    <p>Cargo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="faq-container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <button class="faq-question">O que é o Carrinho Inteligente?</button>
+                <div class="faq-answer">
+                    <p>O Carrinho Inteligente é um protótipo industrial de automação logística para armazéns. Ele utiliza sensores LiDAR, câmeras e inteligência artificial para otimizar a movimentação de mercadorias de forma autônoma.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Quais são as principais funcionalidades?</button>
+                <div class="faq-answer">
+                    <p>O Carrinho Inteligente possui navegação autônoma, leitura de códigos de barras, análise de dados em tempo real, coleta e entrega de itens com braço robótico e sistema de carga e descarga com elevador.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Como posso solicitar uma demonstração?</button>
+                <div class="faq-answer">
+                    <p>Você pode solicitar uma demonstração preenchendo o formulário de contato em nossa página ou entrando em contato diretamente pelo e-mail: contato@carrinhointeligente.com.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Quanto custa o Carrinho Inteligente?</button>
+                <div class="faq-answer">
+                    <p>O custo varia de acordo com as especificações e personalizações necessárias. Entre em contato conosco para receber um orçamento personalizado.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">O Carrinho Inteligente é compatível com meu armazém?</button>
+                <div class="faq-answer">
+                    <p>Sim, o Carrinho Inteligente pode ser adaptado para diferentes tipos de armazéns. Nossa equipe pode realizar uma análise personalizada para garantir a compatibilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <div class="contato-container">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco para saber mais sobre o Carrinho Inteligente e como ele pode transformar seu armazém.</p>
+            <form>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Mensagem"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Carrinho Inteligente. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.146/examples/js/loaders/GLTFLoader.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
