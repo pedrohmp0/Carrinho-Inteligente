@@ -213,6 +213,7 @@ nav {
 .sobre-text {
     flex: 1;
     margin-right: 2rem;
+    text-align: justify;
 }
 
 .sobre-text h2 {
