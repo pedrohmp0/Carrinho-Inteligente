@@ -578,30 +578,37 @@ footer {
         font-size: 1.5rem;
         top: 40%;
         padding: 0.5rem 1rem;
+        white-space: nowrap; /* Evita que o texto quebre em várias linhas */
     }
 
     .slide-text p {
         font-size: 1rem;
         top: 50%;
         padding: 0.5rem 1rem;
+        white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+    }
+
+    .slide img {
+        object-fit: cover; /* Garante que a imagem cubra todo o slide */
     }
 
     .carrossel-controls {
-        bottom: 10px;
+        display: none;
     }
 
     .carrossel-prev, .carrossel-next {
-        padding: 8px;
-        font-size: 1.2rem;
+        padding: 10px;
+        font-size: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.7); /* Torna os botões mais visíveis */
     }
 
     .carrossel-indicators {
-        margin: 0 5px;
+        margin: 0 10px;
     }
 
     .indicator {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
     }
 
     .sobre-container {
@@ -649,11 +656,13 @@ footer {
     .slide-text h1 {
         font-size: 1.2rem;
         top: 35%;
+        padding: 0.5rem;
     }
 
     .slide-text p {
         font-size: 0.9rem;
         top: 45%;
+        padding: 0.5rem;
     }
 
     .carrossel-controls {
@@ -661,17 +670,21 @@ footer {
     }
 
     .carrossel-prev, .carrossel-next {
-        padding: 6px;
-        font-size: 1rem;
+        padding: 8px;
+        font-size: 1.2rem;
     }
 
     .carrossel-indicators {
-        margin: 0 3px;
+        margin: 0 5px;
+    }
+
+    .carrossel {
+        height: 40vh; /* Ajusta a altura do carrossel para dispositivos móveis menores */
     }
 
     .indicator {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
     }
 
     .sobre-text h2 {
